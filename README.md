@@ -2,6 +2,8 @@
 
 This project explores the dataset of the world's oldest businesses, investigating their founding years, categories, and geographical distribution. The dataset, compiled by BusinessFinancing.co.uk, provides insights into businesses that have stood the test of time.
 
+![](400px-Eingang_zum_St._Peter_Stiftskeller.jpg)
+
 ## Key Findings
 
 1. **Founding Years:**
