@@ -58,7 +58,7 @@ FROM businesses
 SELECT COUNT(*)
 FROM businesses
 WHERE year_founded < 1000
-```
+``
    -   Six businesses in the dataset were founded before 1000, with the oldest dating back to 578.
 
 3. **Categories and Detail:**
