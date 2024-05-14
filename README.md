@@ -39,9 +39,12 @@ Image: St. Peter Stiftskeller, founded 803. Credit: [Pakeha](https://commons.wik
 
 ## Key Findings
 
-1. **Founding Years:**
-   - The dataset spans business founding years from 578 to 1999, showcasing the longevity of these enterprises.
-
+1. **1. The oldest business in the world:**
+SELECT S.customer_id, SUM(M.price) AS total_amnt
+FROM sales S
+JOIN menu M ON S.product_id = M.product_id
+GROUP BY S.customer_id
+ORDER BY customer_id
 2. **Businesses Before 1000:**
    - Six businesses in the dataset were founded before 1000, with the oldest dating back to 578.
 
