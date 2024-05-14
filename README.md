@@ -37,7 +37,8 @@ Image: St. Peter Stiftskeller, founded 803. Credit: [Pakeha](https://commons.wik
 |category_code| Code for the category of the business |`varchar`|
 |country_code| ISO 3166-1 3-letter country code |`char`|
 
-## Problem statement and Key Findings
+
+## Case Study Questions & Solutions
 
 **1. The oldest business in the world:**
 ```sql
@@ -51,7 +52,7 @@ Answer:
 |578|1999|
 
 - The SQL query uses aggregate functions to find range of the founding years of the business in the `businesses` dataset.
-- The oldest business in the world was founded in the year 578. 
+- The result shows in one country, the oldest business was only founded in 1999. By contrast, the oldest business in the world was founded back in 578. That's pretty incredible that a business has survived for more than a millennium. 
 
 **2. How many businesses were founded before 1000?**
 ```sql
@@ -235,3 +236,23 @@ Answer:
 - The previous SQL query generated lots of rows which was difficult to analyze. Lets look at those categories which has at least 5 businesses.
 - This SQL query filters down to top categories of the businesses in each continent from 578 till 1999.
 
+## Key Findinga:
+
+- The world's oldest business is present in Japan, founded in 578.
+- Kongō Gumi is the world's oldest business in Japan which operates in the Construction category.
+- There are only 6 businesses that were founded before year 1000 who survived a millennium.
+- "Banking & Finance" is the most popular category.
+- The founding year of the world's oldest business in each continent:
+    - Asia : 578
+    - Europe : 803
+    - North America : 1534
+    - South America : 1565
+    - Africa : 1772
+    - Oceania : 1809
+ - The continents and their top business categories:
+    - Africa : Banking & Finance	| Aviation & Transport | Postal Service
+    - Europe : Distillers, Vintners, & Breweries	| Manufacturing & Production
+    - Asia : Banking & Financ | Aviation & Transport
+  
+
+  ## The End 
