@@ -75,6 +75,7 @@ WHERE year_founded < 1000
 ORDER BY year_founded ASC
 ```
 - Answer:
+  
 | business | year_founded | category_code | country_code |
 |-|-|-|-|
 |Kongō Gumi| 578 | CAT6 | JPN |
