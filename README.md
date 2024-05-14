@@ -44,7 +44,7 @@ Image: St. Peter Stiftskeller, founded 803. Credit: [Pakeha](https://commons.wik
 SELECT MIN(year_founded) AS min, MAX(year_founded) AS max
 FROM businesses
 ```
-- Answer:
+Answer:
   
 | min | max |
 |-|-|
@@ -59,7 +59,7 @@ SELECT COUNT(*)
 FROM businesses
 WHERE year_founded < 1000
 ```
-- Answer:
+Answer:
   
 | count | 
 |-|
@@ -75,7 +75,7 @@ FROM businesses
 WHERE year_founded < 1000
 ORDER BY year_founded ASC
 ```
-- Answer:
+Answer:
   
 | business | year_founded | category_code | country_code |
 |-|-|-|-|
@@ -99,7 +99,7 @@ ON b.category_code = c.category_code
 WHERE year_founded < 1000
 ORDER BY year_founded
 ```
-- Answer:
+Answer:
 
 | business | year_founded | country_code | category |
 |-|-|-|-|
