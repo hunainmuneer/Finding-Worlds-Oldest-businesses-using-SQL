@@ -60,6 +60,7 @@ FROM businesses
 WHERE year_founded < 1000
 ```
 - Answer:
+  
 | count | 
 |-|
 |6|
@@ -89,14 +90,100 @@ ORDER BY year_founded ASC
 - The result shows the business name, the year it was founded, the code of the industry it operates in and the country it was founded in.
 - The world's oldest business still operating today is in Japan.
 
-5. **Common Business Categories:**
-   - "Banking & Finance" is the most common category among the oldest businesses globally.
+**4. Exploring the categories**
+```sql
+SELECT business, year_founded, country_code, category
+FROM businesses AS b
+INNER JOIN categories AS c
+ON b.category_code = c.category_code
+WHERE year_founded < 1000
+ORDER BY year_founded
+```
+- Answer:
 
-6. **Oldest Business by Continent:**
-   - The oldest businesses on each continent were identified, revealing historical trends and timelines.
+| business | year_founded | country_code | category |
+|-|-|-|-|
+|Kongō Gumi| 578 | JPN | Construction |
+|St. Peter Stifts Kulinarium| 803 | Cafés, Restaurants & Bars |
+|Staffelter Hof Winery| 862 | DEU | Distillers, Vintners, & Breweries |
+|Monnaie de Paris| 864 | FRA | Manufacturing & Production |
+|The Royal Mint| 886 | GBR | Manufacturing & Production |
+|Sean's Bar| 900 | IRL | Cafés, Restaurants & Bars |
+  
+- The SQL query joins the two tables in order to get the categories of the business that the above businesses operates in.
+- The query's result shows that the world oldest company is a construction company.
+- The results also shows the other companies business area, which were founded before 1000. 
 
-7. **Comprehensive Dataset:**
-   - Tables were joined to create a comprehensive dataset for more in-depth analysis, combining information on the business, founding year, category, country, and continent.
+**5. Counting the categories**
+```sql
+SELECT category, COUNT(category) as n
+FROM categories as c
+JOIN businesses as b
+ON c.category_code = b.category_code
+GROUP BY category
+ORDER BY n DESC
+LIMIT 10
+```
+Answer: 
+
+| category | n |
+|-|-|
+|Banking & Finance|	37 |
+|Distillers, Vintners, & Breweries|	22 |
+|Aviation & Transport| 19 |
+|Postal Service|	16 |
+|Manufacturing & Production| 15 |
+|Media|	7 |
+|Agriculture|	6 |
+|Cafés, Restaurants & Bars|	6 |
+|Food & Beverages| 6 |
+|Tourism & Hotels| 4 |
+
+- The SQL query retrieves the Top 10 categories of businesses in th dataset.
+- "Banking & Finance" is the most common category among the oldest businesses globally.
+
+**6. Oldest Business by Continent:** 
+```sql
+SELECT MIN(year_founded) as oldest, continent
+FROM businesses as b
+JOIN countries as c
+ON b.country_code = c.country_code
+GROUP BY continent
+ORDER BY oldest
+```
+
+Answer: 
+
+| oldest | continent |
+|-|-|
+|578|	Asia |
+|803|	Europe |
+|1534|	North America |
+|1565|	South America |
+|1772|	Africa |
+|1809| Oceania |
+
+- The SQL result shows the oldest business in each continent still operating.
+
+**7. Joining everything for further analysis**
+```sql
+SELECT b.business, b.year_founded, ca.category, co.country, co.continent
+FROM businesses as b
+JOIN categories as ca ON b.category_code = ca.category_code
+JOIN countries as co ON b.country_code = co.country_code
+```
+
+Answer: 
+
+| business |	year_founded	| category	| country |	continent |
+|-|-|-|-|-|
+|Spinzar Cotton Company| 1930 |	Agriculture	| Afghanistan |	Asia |
+|ALBtelecom|	1912	| Telecommunications | Albania |	Europe |
+|Andbank|	1930 |	Banking & Finance |	Andorra |	Europe |
+|Liwa Chemicals|	1939 |	Manufacturing & Production |	United Arab Emirates | Asia |
+
+- The results are just a preview, you can visit the complete result [here]() in the notebook.
+- Tables were joined to create a comprehensive dataset for more in-depth analysis, combining information on the business, founding year, category, country, and continent.
 
 8. **Categories by Continent:**
    - Counts of businesses in each continent and category were examined, shedding light on the distribution of business types across different regions.
