@@ -50,8 +50,16 @@ FROM businesses
 |-|-|
 |578|1999|
 
-2. **Businesses Before 1000:**
-   - Six businesses in the dataset were founded before 1000, with the oldest dating back to 578.
+- The SQL query uses aggregate functions to find range of the founding years of the business in the `businesses` dataset.
+- The oldest business in the world was founded in the year 578. 
+
+2. **How many businesses were founded before 1000?**
+   ```sql
+SELECT COUNT(*)
+FROM businesses
+WHERE year_founded < 1000
+```
+   -   Six businesses in the dataset were founded before 1000, with the oldest dating back to 578.
 
 3. **Categories and Detail:**
    - Categories of these businesses were explored, providing a detailed look at the types of enterprises that endured for over a millennium.
