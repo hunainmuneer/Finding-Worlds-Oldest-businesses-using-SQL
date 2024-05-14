@@ -1,4 +1,8 @@
-# World's oldest businesses
+# What and Where are the World's Oldest Businesses
+
+![](400px-Eingang_zum_St._Peter_Stiftskeller.jpg)
+
+Image: St. Peter Stiftskeller, founded 803. Credit: [Pakeha](https://commons.wikimedia.org/wiki/File:Eingang_zum_St._Peter_Stiftskeller.jpg)
 
 ## Description
 
@@ -6,41 +10,32 @@
 - Some businesses do this remarkably well and last for hundreds of years. BusinessFinancing.co.uk [researched](https://businessfinancing.co.uk/the-oldest-company-in-almost-every-country/) the oldest company that is still in business in (almost) every country and compiled the results into a dataset.
 - In this project, we will explore data from BusinessFinancing.co.uk on the world's oldest businesses: when were they founded, and which industries do they belong to?
 
-![](400px-Eingang_zum_St._Peter_Stiftskeller.jpg)
-
-Image: St. Peter Stiftskeller, founded 803. Credit: [Pakeha](https://commons.wikimedia.org/wiki/File:Eingang_zum_St._Peter_Stiftskeller.jpg)
+## Data
 
 ### `categories` table
 
 | Column | Definition | Data Type |
 |-|-|-|  
 |category_code| Code for the category of the business |`varchar`|
-| category | Description of the business category |`varchar`|
+|category| Description of the business category |`varchar`|
 
-### `reviews` table
-
-| Column | Definition | Data Type |
-|-|-|-|
-|name|Name of the video game|`varchar`|  
-|critic_score|Critic score according to Metacritic|`float`|
-|user_score|User score according to Metacritic|`float`|
-
-
-### `users_avg_year_rating` table
+### `countries` table
 
 | Column | Definition | Data Type |
 |-|-|-|
-|year| Release year of the games reviewed |`int`|  
-|num_games| Number of games released that year |`int`|
-|avg_user_score| Average score of all the games ratings for the year |`float`|
+|country_code| ISO 3166-1 3-letter country code |`varchar`|
+|country| Name of the country |`varchar`|
+|continent| Name of the continent that the country exists in |`varchar`|
 
-### `critics_avg_year_rating` table
+
+### `businesses` table
 
 | Column | Definition | Data Type |
 |-|-|-|
-|year| Release year of the games reviewed |`int`|  
-|num_games| Number of games released that year |`int`|
-|avg_critic_score| Average score of all the games ratings for the year |`float`|
+|business| Name of the business |`varchar`|  
+|year_founded| Year the business was founded |`int`|
+|category_code| Code for the category of the business |`varchar`|
+|country_code| ISO 3166-1 3-letter country code |`char`|
 
 ## Key Findings
 
