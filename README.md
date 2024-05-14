@@ -45,6 +45,7 @@ SELECT MIN(year_founded) AS min, MAX(year_founded) AS max
 FROM businesses
 ```
 - Answer:
+  
 | min | max |
 |-|-|
 |578|1999|
