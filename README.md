@@ -47,7 +47,7 @@ FROM businesses
 - Answer:
 | min | max |
 |-|-|
-|578| 1999 |
+|578|1999|
 
 2. **Businesses Before 1000:**
    - Six businesses in the dataset were founded before 1000, with the oldest dating back to 578.
