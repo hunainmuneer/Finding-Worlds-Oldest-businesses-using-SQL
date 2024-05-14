@@ -37,16 +37,18 @@ Image: St. Peter Stiftskeller, founded 803. Credit: [Pakeha](https://commons.wik
 |category_code| Code for the category of the business |`varchar`|
 |country_code| ISO 3166-1 3-letter country code |`char`|
 
-## Key Findings
+## Problem statement and Key Findings
 
 1. **1. The oldest business in the world:**
 ```sql
-SELECT S.customer_id, SUM(M.price) AS total_amnt
-FROM sales S
-JOIN menu M ON S.product_id = M.product_id
-GROUP BY S.customer_id
-ORDER BY customer_id
+SELECT MIN(year_founded) AS min, MAX(year_founded) AS max
+FROM businesses
 ```
+- Answer:
+| min | max |
+|-|-|
+|578| 1999 |
+
 2. **Businesses Before 1000:**
    - Six businesses in the dataset were founded before 1000, with the oldest dating back to 578.
 
