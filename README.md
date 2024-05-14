@@ -8,7 +8,39 @@
 
 ![](400px-Eingang_zum_St._Peter_Stiftskeller.jpg)
 
-Image: St. Peter Stiftskeller, founded 803. Credit: [Pakeha](https://commons.wikimedia.org/wiki/File:Eingang_zum_St._Peter_Stiftskeller.jpg).
+Image: St. Peter Stiftskeller, founded 803. Credit: [Pakeha](https://commons.wikimedia.org/wiki/File:Eingang_zum_St._Peter_Stiftskeller.jpg)
+
+### `categories` table
+
+| Column | Definition | Data Type |
+|-|-|-|  
+|category_code| Code for the category of the business |`varchar`|
+| category | Description of the business category |`varchar`|
+
+### `reviews` table
+
+| Column | Definition | Data Type |
+|-|-|-|
+|name|Name of the video game|`varchar`|  
+|critic_score|Critic score according to Metacritic|`float`|
+|user_score|User score according to Metacritic|`float`|
+
+
+### `users_avg_year_rating` table
+
+| Column | Definition | Data Type |
+|-|-|-|
+|year| Release year of the games reviewed |`int`|  
+|num_games| Number of games released that year |`int`|
+|avg_user_score| Average score of all the games ratings for the year |`float`|
+
+### `critics_avg_year_rating` table
+
+| Column | Definition | Data Type |
+|-|-|-|
+|year| Release year of the games reviewed |`int`|  
+|num_games| Number of games released that year |`int`|
+|avg_critic_score| Average score of all the games ratings for the year |`float`|
 
 ## Key Findings
 
