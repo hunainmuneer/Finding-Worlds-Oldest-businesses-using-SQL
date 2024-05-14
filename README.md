@@ -5,6 +5,7 @@
 An important part of business is planning for the future and ensuring that the business survives changing market conditions. Some businesses do this remarkably well and last for hundreds of years. In this project, we will explore data from [BusinessFinancing.co.uk](https://businessfinancing.co.uk/the-oldest-company-in-almost-every-country/) on the world's oldest businesses: when were they founded, and which industries do they belong to?
 
 ![](400px-Eingang_zum_St._Peter_Stiftskeller.jpg)
+
 Image: St. Peter Stiftskeller, founded 803. Credit: [Pakeha](https://commons.wikimedia.org/wiki/File:Eingang_zum_St._Peter_Stiftskeller.jpg).
 
 ## Key Findings
