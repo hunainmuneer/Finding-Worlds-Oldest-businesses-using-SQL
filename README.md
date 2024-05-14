@@ -39,7 +39,7 @@ Image: St. Peter Stiftskeller, founded 803. Credit: [Pakeha](https://commons.wik
 
 ## Problem statement and Key Findings
 
-1. **1. The oldest business in the world:**
+**1. The oldest business in the world:**
 ```sql
 SELECT MIN(year_founded) AS min, MAX(year_founded) AS max
 FROM businesses
@@ -53,7 +53,7 @@ FROM businesses
 - The SQL query uses aggregate functions to find range of the founding years of the business in the `businesses` dataset.
 - The oldest business in the world was founded in the year 578. 
 
-2. **How many businesses were founded before 1000?**
+**2. How many businesses were founded before 1000?**
 ```sql
 SELECT COUNT(*)
 FROM businesses
@@ -67,7 +67,7 @@ WHERE year_founded < 1000
 - The SQL query filters out the number of businesses that were founded before th year 1000.
 - Six businesses in the dataset were founded before 1000, with the oldest dating back to 578.
 
-3. **Which businesses were founded before 1000?:**
+**3. Which businesses were founded before 1000?:**
 ```sql
 SELECT *
 FROM businesses
@@ -77,9 +77,9 @@ ORDER BY year_founded ASC
 - Answer:
 | business | year_founded | category_code | country_code |
 |-|-|-|-|
-|Kongō Gumi	| 578 | CAT6 | JPN |
-|St. Peter Stifts Kulinarium	| 803 | CAT4 | AUT |
-|Staffelter Hof Winery	| 862 | CAT9 | DEU |
+|Kongō Gumi| 578 | CAT6 | JPN |
+|St. Peter Stifts Kulinarium| 803 | CAT4 | AUT |
+|Staffelter Hof Winery| 862 | CAT9 | DEU |
 |Monnaie de Paris| 864 | CAT12 | FRA |
 |The Royal Mint| 886 | CAT12 | GBR |
 |Sean's Bar| 900 | CAT4 | IRL |
