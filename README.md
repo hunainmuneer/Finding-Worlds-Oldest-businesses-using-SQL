@@ -54,27 +54,51 @@ FROM businesses
 - The oldest business in the world was founded in the year 578. 
 
 2. **How many businesses were founded before 1000?**
-   ```sql
+```sql
 SELECT COUNT(*)
 FROM businesses
 WHERE year_founded < 1000
-``
-   -   Six businesses in the dataset were founded before 1000, with the oldest dating back to 578.
+```
+- Answer:
+| count | 
+|-|
+|6|
 
-3. **Categories and Detail:**
-   - Categories of these businesses were explored, providing a detailed look at the types of enterprises that endured for over a millennium.
+- The SQL query filters out the number of businesses that were founded before th year 1000.
+- Six businesses in the dataset were founded before 1000, with the oldest dating back to 578.
 
-4. **Common Business Categories:**
+3. **Which businesses were founded before 1000?:**
+```sql
+SELECT *
+FROM businesses
+WHERE year_founded < 1000
+ORDER BY year_founded ASC
+```
+- Answer:
+| business | year_founded | category_code | country_code |
+|-|-|-|-|
+|Kongō Gumi	| 578 | CAT6 | JPN |
+|St. Peter Stifts Kulinarium	| 803 | CAT4 | AUT |
+|Staffelter Hof Winery	| 862 | CAT9 | DEU |
+|Monnaie de Paris| 864 | CAT12 | FRA |
+|The Royal Mint| 886 | CAT12 | GBR |
+|Sean's Bar| 900 | CAT4 | IRL |
+
+- The SQL query finds more details about the 6 businesses that were founded before the year 1000.
+- The result shows the business name, the year it was founded, the code of the industry it operates in and the country it was founded in.
+- The world's oldest business still operating today is in Japan.
+
+5. **Common Business Categories:**
    - "Banking & Finance" is the most common category among the oldest businesses globally.
 
-5. **Oldest Business by Continent:**
+6. **Oldest Business by Continent:**
    - The oldest businesses on each continent were identified, revealing historical trends and timelines.
 
-6. **Comprehensive Dataset:**
+7. **Comprehensive Dataset:**
    - Tables were joined to create a comprehensive dataset for more in-depth analysis, combining information on the business, founding year, category, country, and continent.
 
-7. **Categories by Continent:**
+8. **Categories by Continent:**
    - Counts of businesses in each continent and category were examined, shedding light on the distribution of business types across different regions.
 
-8. **Filtered Results:**
+9. **Filtered Results:**
    - The analysis was refined to focus on continent/category pairs with a count greater than 5, providing a more manageable view of significant trends.
