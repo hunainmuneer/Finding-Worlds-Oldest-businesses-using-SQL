@@ -182,11 +182,56 @@ Answer:
 |Andbank|	1930 |	Banking & Finance |	Andorra |	Europe |
 |Liwa Chemicals|	1939 |	Manufacturing & Production |	United Arab Emirates | Asia |
 
-- The results are just a preview, you can visit the complete result [here]() in the notebook.
-- Tables were joined to create a comprehensive dataset for more in-depth analysis, combining information on the business, founding year, category, country, and continent.
+- The three tables were joined to create a comprehensive dataset for more in-depth analysis, combining information on the business, founding year, category, country, and continent.
+- The results are just a preview, you can visit the complete result [here](notebook.ipynb) in the notebook.
 
-8. **Categories by Continent:**
-   - Counts of businesses in each continent and category were examined, shedding light on the distribution of business types across different regions.
+**8. Counting categories by continent**
+```sql
+SELECT co.continent, ca.category, COUNT(b.business) as n
+FROM businesses as b
+JOIN categories as ca ON b.category_code = ca.category_code
+JOIN countries as co ON b.country_code = co.country_code
+GROUP BY co.continent, ca.category
+```
 
-9. **Filtered Results:**
-   - The analysis was refined to focus on continent/category pairs with a count greater than 5, providing a more manageable view of significant trends.
+Answer: 
+
+| continent	| category |	n |
+|-|-|-|
+|North America | Banking & Finance | 4 |
+|Oceania|	Postal Service	| 1 | 
+|South America|	Food & Beverages	| 2 |
+|Europe|	Tourism & Hotels |	2 |
+|Asia|	Media |	1 |
+|Europe|	Medical |	1 |
+
+- The SQL query retrieves the counts of businesses in each continent and category were examined, shedding light on the distribution of business types across different regions.
+- The results are just a preview, you can visit the complete result [here](notebook.ipynb) in the notebook.
+
+
+**9. Filtering counts by continent and category**
+```sql
+SELECT co.continent, ca.category, COUNT(b.business) as n
+FROM businesses as b
+JOIN categories as ca ON b.category_code = ca.category_code
+JOIN countries as co ON b.country_code = co.country_code
+GROUP BY co.continent, ca.category
+HAVING COUNT(b.business) > 5
+ORDER BY n DESC
+```
+
+Answer: 
+
+|continent | category |	n |
+|-|-|-|
+|Africa| Banking & Finance |	17 |
+|Europe| Distillers, Vintners, & Breweries | 12 |
+|Africa| Aviation & Transport | 10 |
+|Africa| Postal Service |	9 |
+|Europe| Manufacturing & Production |	8 |
+|Asia| Aviation & Transport |	7 |
+|Asia| Banking & Finance | 6 |
+
+- The previous SQL query generated lots of rows which was difficult to analyze. Lets look at those categories which has at least 5 businesses.
+- This SQL query filters down to top categories of the businesses in each continent from 578 till 1999.
+
